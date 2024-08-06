@@ -42,28 +42,19 @@ if (!$res[0]) {
 }
 
 
+// Create Product and Brand objects
 $product = new Product($db);
+$brand = new Brand($db); // Assume you have a Brand class
 
 // Get selected brand from form submission
 $selected_brand = isset($_GET['brand']) ? $_GET['brand'] : '';
 
-// Prepare the SQL query
-$query = "SELECT p.*, b.name AS brand_name FROM Products p JOIN Brands b ON p.brand_id = b.brand_id";
-if ($selected_brand) {
-    $query .= " WHERE b.name = :selected_brand";
-}
-$stmt = $db->prepare($query);
+// Fetch products by selected brand
+$stmt = $product->get_products_by_brand($selected_brand);
 
-if ($selected_brand) {
-    $stmt->bindParam(':selected_brand', $selected_brand);
-}
-
-if ($stmt->execute()) {
-    $brands = $db->query("SELECT DISTINCT name FROM Brands")->fetchAll(PDO::FETCH_ASSOC);
-} else {
-    echo "Error executing query: " . $stmt->errorInfo()[2];
-    exit();
-}
+// Fetch distinct brands for filter dropdown
+$brand_stmt = $db->query("SELECT brand_id, name FROM Brands WHERE is_active = 1");
+$brands = $brand_stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
