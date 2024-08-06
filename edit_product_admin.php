@@ -35,7 +35,8 @@ $brand = new Brand($db);
 
 // Check if the product ID is provided
 if (!isset($_GET['product_id'])) {
-    header("Location: view_products_list_admin.php");
+    $error_message = urlencode("Please provide a Product ID");
+    header("Location: error_page.php?message=$error_message");
     exit();
 }
 
@@ -47,8 +48,8 @@ $product->product_id = $product_id;
 $product->readOne();
 
 if (!$product->product_name) {
-    // Redirect to error page later
-    header("Location: view_products_list_admin.php");
+    $error_message = urlencode("Please provide a valid product ID");
+    header("Location: error_page.php?message=$error_message");
     exit();
 }
 

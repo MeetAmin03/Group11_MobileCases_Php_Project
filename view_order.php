@@ -39,8 +39,9 @@ $order_id = isset($_GET['order_id']) ? $_GET['order_id'] : 0;
 $order->order_id = $order_id;
 $order->readOne();
 
-if (!$order->order_id) {
-    echo "Order not found.";
+if (!$order->order_number) {
+    $error_message = urlencode("Order Not Found");
+    header("Location: error_page.php?message=$error_message");
     exit();
 }
 

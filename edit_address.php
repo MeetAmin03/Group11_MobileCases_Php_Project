@@ -32,7 +32,8 @@ $addresses = new Addresses($db);
 
 // Check if the address ID is provided
 if (!isset($_GET['address_id'])) {
-    header("Location: addresses.php");
+    $error_message = urlencode("Please provide an Address ID");
+    header("Location: error_page.php?message=$error_message");
     exit();
 }
 
@@ -43,7 +44,8 @@ $addresses->address_id = $address_id;
 $address = $addresses->readOne();
 
 if (!$address) {
-    header("Location: addresses.php");
+    $error_message = urlencode("Please provide a valid Address ID");
+    header("Location: error_page.php?message=$error_message");
     exit();
 }
 
