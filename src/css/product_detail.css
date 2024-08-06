@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 0 16px;
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: row;
+    max-width: 1600px !important;
+    height: 700px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.product-image {
+    flex: 1;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: none;
+}
+
+.product-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.product-description {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0 0 20px;
+    line-height: 1.5;
+}
+
+.product-price,
+.product-availability {
+    font-size: 1rem;
+    margin: 0 0 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.value {
+    margin-left: 5px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantity-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-button:hover {
+    background-color: #000;
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin: 0 10px;
+    font-size: 1rem;
+}
+
+.add-to-cart-button {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #c9ab81;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 40%;
+}
+
+.add-to-cart-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+button.add-to-cart-button:hover {
+    animation: none;
+}
