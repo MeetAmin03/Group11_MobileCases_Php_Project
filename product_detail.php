@@ -35,6 +35,13 @@ if (!$product_id) {
 
 $product->product_id = $product_id;
 $product->readOne();
+
+
+if (!$product->product_name) {
+    $error_message = urlencode("Please provide a valid product ID");
+    header("Location: error_page.php?message=$error_message");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
