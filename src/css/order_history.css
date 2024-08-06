@@ -1,0 +1,74 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Order History Section */
+.order-history-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 3%;
+}
+
+.order-history-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.order-history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-history-table thead {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.order-history-table th,
+.order-history-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.order-history-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-history-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.view-order-btn {
+    text-decoration: none;
+    color: #c9ab81;
+    font-weight: bold;
+}
+
+.view-order-btn:hover {
+    text-decoration: underline;
+}
+
+.address_buttons {
+    display: flex;
+    justify-content: space-between;
+    color: #c9ab81;
+}
+
+.address_buttons a {
+    color: #c9ab81;
+}
